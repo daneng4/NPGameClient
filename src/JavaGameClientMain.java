@@ -69,7 +69,7 @@ public class JavaGameClientMain extends JFrame {
 
 
         JButton btnConnect = new JButton("게임시작");
-        btnConnect = new JButton(new ImageIcon("image/clientstart.png"));
+        btnConnect = new JButton(new ImageIcon("image/start_button.png"));
         btnConnect.setBounds(550, 500, 179, 56);
         contentPane.add(btnConnect);
         Myaction action = new Myaction();

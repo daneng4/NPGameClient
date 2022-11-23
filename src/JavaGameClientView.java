@@ -63,6 +63,7 @@ public class JavaGameClientView extends JFrame {
     JPanel panel;
     private JLabel lblMouseEvent;
     private Graphics gc;
+    private JLabel GameMap;
     private JLabel GameScreen;
     private JLabel UserScreen;
     private JLabel CookieMapImg;
@@ -79,7 +80,8 @@ public class JavaGameClientView extends JFrame {
     private JLabel bazzi = new JLabel(new ImageIcon("image/bazzi_front.png"));
     private JLabel woonie = new JLabel(new ImageIcon("image/woonie_front.png"));
 
-    private ImageIcon btnOutimg = new ImageIcon("image/btnOut.png");
+    private ImageIcon btnOutimg = new ImageIcon("image/exit_button.png");
+    private ImageIcon gameScreen = new ImageIcon("image/play_bg.png");
 
 
 
@@ -87,14 +89,19 @@ public class JavaGameClientView extends JFrame {
     public JavaGameClientView(String username, String ip_addr, String port_no)  {
         setResizable(false);
 
-
         //전체 pane
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(350, 100, 820, 600);
+        setBounds(0, 0, 1053, 815);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
+
+        // 전체 맵 배경
+        GameScreen = new JLabel(new ImageIcon(gameScreen.getImage()));
+        GameScreen.setBorder(null);
+        GameScreen.setOpaque(true);
+        GameScreen.setBounds(0,0,1040,780);
 
         // 0과 1중 랜덤으로 한 숫자를 뽑아 맵 결정
         Random random = new Random();
@@ -107,10 +114,10 @@ public class JavaGameClientView extends JFrame {
 
 
         //게임 screen
-        GameScreen = new JLabel(new ImageIcon(map));
-        GameScreen.setBorder(null);
-        GameScreen.setOpaque(true);
-        GameScreen.setBounds(0, 0, 600, 600);
+        GameMap = new JLabel(new ImageIcon(map));
+        GameMap.setBorder(null);
+        GameMap.setOpaque(true);
+        GameMap.setBounds(24, 52, 783, 678);
 
         //입장한 유저 screen
         String userscreen = "image/userscreen.png";
@@ -130,8 +137,10 @@ public class JavaGameClientView extends JFrame {
         Game_btnOut.setBorderPainted(false);
         Game_btnOut.setContentAreaFilled(false);
 
-        contentPane.add(Game_btnOut);
+        contentPane.add(GameMap);
         contentPane.add(GameScreen);
+        contentPane.add(Game_btnOut);
+
         contentPane.add(UserScreen);
         setVisible(true);
     }
