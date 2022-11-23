@@ -55,13 +55,13 @@ public class JavaGameClientMain extends JFrame {
         contentPane.setLayout(null);
 
         JLabel lblNewLabel = new JLabel(new ImageIcon("image/id.png"));
-        lblNewLabel.setBounds(380, 300, 553, 58);
+        lblNewLabel.setBounds(340, 300, 553, 58);
         contentPane.add(lblNewLabel);
 
         txtUserName = new JTextField();
         txtUserName.setFont(font1);
         txtUserName.setHorizontalAlignment(SwingConstants.LEFT);
-        txtUserName.setBounds(605, 310, 320, 35);
+        txtUserName.setBounds(565, 310, 320, 35);
         contentPane.add(txtUserName);
         txtUserName.setColumns(10);
         txtUserName.setBorder(null);
